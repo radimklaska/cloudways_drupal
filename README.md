@@ -1,6 +1,6 @@
 # CLOUDWAYS-PROJECT-NAME Cloudways Drupal
 
-*This is work in progress.* The code works and is usable, but needs a few manual steps during setup time.
+**This is work in progress.** The code works and is usable, but needs a few manual steps during setup time.
 
 Feel free to test and contribute. The `rsync` from GitHub Actions to Cloudways needs to be revisited.
 
@@ -44,7 +44,7 @@ Feel free to test and contribute. The `rsync` from GitHub Actions to Cloudways n
         * Password: Strong password.
   * `Domain Management`: Add the primary domain and secondary domains. (`www.*`)
   * `SSL Certificate`: SSL is handled by Let's Encrypt and verified trough DNS. You can enable it now.
-  * `Deployment via Git`: *Don't use this feature.* It's missing features required for deploying Drupal. (at the time of writing)
+  * `Deployment via Git`: **Don't use this feature.** It's missing features required for deploying Drupal. (at the time of writing)
   * `Application Settings`
     * `FOLDER`: change this to `CLOUDWAYS-PROJECT-NAME`
     * `WEBROOT`: change this to `public_html/docroot` (fill in only `docroot`)
@@ -124,7 +124,7 @@ find ./ -type f \( -iname \*.yml -o -iname \*.sh -o -iname \*.md -o -iname \*.js
 find ./ -type f \( -iname \*.yml -o -iname \*.sh -o -iname \*.md -o -iname \*.json \) -print0 | xargs -0 sed -i '' -e 's/CLOUDWAYS-PROJECT-NAME/actual-name/g'
 ```
 
-*ToDo*: First push will probably throw some errors. Missing folders etc. This needs to be fixed manually atm. More docs to come. Hopefully more automation too.
+**ToDo**: First push will probably throw some errors. Missing folders etc. This needs to be fixed manually atm. More docs to come. Hopefully more automation too.
 
 ## Notes:
 * Set up your cron in the App settings under `Cron Job Management`.
