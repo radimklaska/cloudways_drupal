@@ -110,7 +110,7 @@ On https://github.com/radimklaska/CLOUDWAYS-PROJECT-NAME/settings/secrets/action
 
 ## Code
 
-* https://github.com/radimklaska/cloudways_drupal9 and click the `Use this template` button.
+* https://github.com/radimklaska/cloudways_drupal and click the `Use this template` button.
   * Name your new repo: `CLOUDWAYS-PROJECT-NAME`
   * Clone it locally and get ready to edit.  
 
