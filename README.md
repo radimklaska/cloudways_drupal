@@ -1,4 +1,16 @@
-# CLOUDWAYS-PROJECT-NAME CloudWays Drupal 9
+# CLOUDWAYS-PROJECT-NAME Cloudways Drupal
+
+*This is work in progress.* The code works and is usable, but needs a few manual steps during setup time.
+
+Feel free to test and contribute. The `rsync` from GitHub Actions to Cloudways needs to be revisited.
+
+## Key points
+* Start Drupal 9 project
+* Manage codebase with Composer https://getcomposer.org/
+* Develop on local with Lando https://docs.lando.dev/
+* Use Drush to manage all environments https://www.drush.org/
+* Git `push` to deploy.
+* GitHub Actions will build and artefact and deploy it for you. https://github.com/features/actions
 
 # Setup
 
@@ -111,6 +123,8 @@ On https://github.com/radimklaska/CLOUDWAYS-PROJECT-NAME/settings/secrets/action
 find ./ -type f \( -iname \*.yml -o -iname \*.sh -o -iname \*.md -o -iname \*.json \) -print0 | xargs -0 sed -i '' -e 's/CLOUDWAYS-PROJECT-DOMAIN/actual-domain.com/g' &&
 find ./ -type f \( -iname \*.yml -o -iname \*.sh -o -iname \*.md -o -iname \*.json \) -print0 | xargs -0 sed -i '' -e 's/CLOUDWAYS-PROJECT-NAME/actual-name/g'
 ```
+
+*ToDo*: First push will probably throw some errors. Missing folders etc. This needs to be fixed manually atm. More docs to come. Hopefully more automation too.
 
 ## Notes:
 * Set up your cron in the App settings under `Cron Job Management`.
