@@ -1,0 +1,3 @@
+/docroot/sites/*/files/.gitkeep
+/files-private/default/.htaccess
+/cloudways/secrets/default/example.settings.123456-abcdefghij.php

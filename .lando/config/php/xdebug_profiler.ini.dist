@@ -1,0 +1,5 @@
+; Profiling can be enabled on the fly. No Xdebug restart required.
+xdebug.profiler_enable=1
+
+; Directory must exist!
+xdebug.profiler_output_dir=/app/profiler

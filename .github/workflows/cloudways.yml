@@ -1,0 +1,13 @@
+name: Cloudways build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy
+      run: .github/workflows/cloudways_deploy.sh "${{ secrets.DeployCloudwaysPrivateKey }}" "${{ secrets.DeployCloudwaysUsername }}" "${{ secrets.DeployCloudwaysHostname }}" "${{ secrets.DeployCloudwaysPath }}"

@@ -1,0 +1,4 @@
+/docroot/sites/*/files/*
+/docroot/sites/*/settings.local.php
+/files-private/*
+/cloudways/secrets/*

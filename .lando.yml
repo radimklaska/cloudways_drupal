@@ -1,0 +1,45 @@
+name: CLOUDWAYS-PROJECT-NAME
+recipe: drupal8
+config:
+  webroot: docroot
+services:
+  appserver:
+    type: php:7.4
+    xdebug: false # To enable: lando xdebug-on
+    overrides:
+      volumes:
+        - "$SSH_AUTH_SOCK:/ssh_auth_sock"
+      environment:
+        SSH_AUTH_SOCK: /ssh_auth_sock
+        DRUSH_ALLOW_XDEBUG: 1
+        # Load custom php.ini files if exist in .lando/config/php directory.
+        PHP_INI_SCAN_DIR: "/usr/local/etc/php/conf.d:/app/.lando/config/php"
+    extras:
+      - apt-get update -y
+      - apt-get install vim pv jq -y
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+    portforward: true
+tooling:
+  fresh-install:
+    service: appserver
+    description: Setup all sites (including settings.php) from fresh or existing DB dump.
+    cmd:
+      - "/app/.lando/fresh-install.sh"
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for apache.
+    cmd: "docker-php-ext-enable xdebug && /etc/init.d/apache2 reload"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for apache.
+    cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
+    user: root
+proxy:
+  appserver:
+    - CLOUDWAYS-PROJECT-NAME.lndo.site
+  mailhog:
+    - CLOUDWAYS-PROJECT-NAME-mailhog.lndo.site
